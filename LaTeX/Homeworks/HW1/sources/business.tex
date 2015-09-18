@@ -1,0 +1,70 @@
+\chapter{T-Shirt Business}
+
+Relationship:
+\begin{itemize}
+	\item{\textbf{t\_shirt} : one T-Shirt can have one Design, Color, and Size;}
+	\item{\textbf{t\_shirt\_design} : one Design can have many T-Shirts;}
+	\item{\textbf{t\_shirt\_color} : one Color can have many T-Shirts;}
+	\item{\textbf{t\_shirt\_size} : one Size can have many T-Shirts;}
+\end{itemize}
+
+The cost rule (based on design, and XL and XXL cost \$2.00 more than other sizes) can be set by the user inside the application which will maintain this Database.
+
+\begin{table}[H]
+	\begin{center}
+		\resizebox{14cm}{!}
+		{
+			\begin{tabular}{|c|c|c|c|c|c|}
+				\hline
+				tShirtID & tShirtQuantity & tShirtCost & FK\_tShirtDesignID & FK\_tShirtColorID & FK\_tShirtSizeID \\ \hline
+				1 & 10 & 8.00 & 1 & 2 & 3 \\ \hline
+				2 & 8 & 10.00 & 1 & 2 & 4 \\ \hline
+				3 & 20 & 5.00 & 3 & 1 & 2 \\ \hline
+			\end{tabular}
+		}
+		\caption{Database Table t\_shirt}
+	\end{center}
+\end{table}
+
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			tShirtDesignID & tShirtDesignName & FK\_tShirtID \\ \hline
+			1 & Stylish & (1,2) \\ \hline
+			2 & Sport & () \\ \hline
+			3 & Music & (3) \\ \hline
+			4 & Games & () \\ \hline
+		\end{tabular}
+		\caption{Database Table t\_shirt\_design}
+	\end{center}
+\end{table}
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			tShirtColorID & tShirtColorName & tShirtColorRGB & FK\_tShirtID \\ \hline
+			1 & Black & 000000 & (3) \\ \hline
+			2 & Red & FF0000 & (1,2) \\ \hline
+			3 & White & FFFFFF & () \\ \hline
+		\end{tabular}
+		\caption{Database Table t\_shirt\_color}
+	\end{center}
+\end{table}
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			tShirtSizeID & tShirtSizeType & FK\_tShirtID \\ \hline
+			1 & S & () \\ \hline
+			2 & M & (3) \\ \hline
+			3 & L & (1) \\ \hline
+			4 & XL & (2) \\ \hline
+			5 & XXL & () \\ \hline
+		\end{tabular}
+		\caption{Database Table t\_shirt\_size}
+	\end{center}
+\end{table}
