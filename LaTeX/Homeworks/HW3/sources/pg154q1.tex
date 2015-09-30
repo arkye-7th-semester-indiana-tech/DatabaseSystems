@@ -1,0 +1,70 @@
+\chapter{Leslie's Auto Sales}
+
+Ternary Relationship:
+\begin{itemize}
+	\item{\textbf{salesperson} : one Salesperson can have zero, one, or many Sales;}
+	\item{\textbf{customer} : one Customer can have zero, one, or many Sales;}
+	\item{\textbf{automobile} : one Automobile can have zero, one or many Sales;}
+	\item{\textbf{automobile} : one Automobile can have zero, one or many Sales;}
+	\item{\textbf{sale} : one Sale have one Salesperson, Customer, and Automobile.}
+\end{itemize}
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|c|c|}
+			\hline
+			\textbf{Attribute Name} & \textbf{Attribute Description} \\ \hline
+			salespersonID & Salesperson Number (Unique) \\ \hline
+			salespersonName & Salesperson Name \\ \hline
+			salespersonPhone & Salesperson Telephone \\ \hline
+			salespersonYWC & Salesperson Years With Company \\ \hline
+		\end{tabular}
+		\caption{Salesperson Relation}
+	\end{center}
+\end{table}
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|c|c|}
+			\hline
+			\textbf{Attribute Name} & \textbf{Attribute Description} \\ \hline
+			customerID & Customer Number (Unique) \\ \hline
+			customerName & Customer Name \\ \hline
+			customerAddress & Customer Address \\ \hline
+		\end{tabular}
+		\caption{Customer Relation}
+	\end{center}
+\end{table}
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|c|c|}
+			\hline
+			\textbf{Attribute Name} & \textbf{Attribute Description} \\ \hline
+			automobileID & Vehicle Identification Number (Unique) \\ \hline
+			automobileManufacturer & Vehicle Manufacturer \\ \hline
+			automobileModel & Vehicle Model \\ \hline
+			automobileYear & Vehicle Year \\ \hline
+			automobilePrice & Vehicle Sticker Price \\ \hline
+		\end{tabular}
+		\caption{Automobile Relation}
+	\end{center}
+\end{table}
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|c|c|}
+			\hline
+			\textbf{Attribute Name} & \textbf{Attribute Description} \\ \hline
+			saleID & Sale Number (Unique) \\ \hline
+			FK\_customerID & Customer Number (Unique) \\ \hline
+			FK\_salespersonID & Salesperson Number (Unique) \\ \hline
+			FK\_automobileID & Vehicle Identification Number (Unique) \\ \hline
+			saleDate & Date of the Sale \\ \hline
+			saleNegotiatedPrice & Real Price of the Sale \\ \hline
+		\end{tabular}
+		\caption{Sale Relation}
+	\end{center}
+\end{table}
+
+The sale relation describe the interaction of automobile, customer, and salesperson. The value of last purchase of the customer at Leslie's can be discovered by tracking the sale's row which have the most recent date of sale from that customer.
