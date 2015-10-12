@@ -1,0 +1,32 @@
+Chapter 7 - Logical Database Design
+
+  Data Normalization is a logical database design technique
+  Unnormalized data can have multivalued attributes
+  
+  1st Normal Form can not have multivalued attributes
+  2NF may have transitive dependencies
+  3NF is free of data redundancy
+  
+  Determinants can consist of single or multiple attributes
+  
+  Logical database design has data normalization as a technique
+  Is a conversion of ER diagrams
+  Is perfomed before physical database design
+  Has tables that have no data redundancy
+  
+  ---
+  
+  Customer
+  CustomerID LN  FN  Addr  City  St  CountryCode
+  
+  Order
+  CustomerID ItemID SalesPersonID
+  
+  Items
+  ItemID  Descr Price Qty
+  
+  ItemImage
+  ItemID  Pic
+  
+  SalesPerson
+  SalesPersonID LN  FN
