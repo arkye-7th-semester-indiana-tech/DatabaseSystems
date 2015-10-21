@@ -4,23 +4,89 @@ Create ERD
     Attributes
     Relationships
 
-Entities:
-  Shipped items
-    <PK>itemNumber
-    weight
-    dimensions
-    insuranceAmount
-    destination
-    finalDeliveryDate
-    <FK>retailCenterUniqueID
-  Transport Event
-    <PK>scheduleNumber
-    type
-    deliveryRoute
-    <FK>shippedItemNumber
-  Retail Center
-    <PK>uniqueID
-    type
-    address
-    
-  
+UPS EXAMPLE
+  Entities:
+    Shipped items
+      <PK>itemNumber
+      weight
+      dimensions
+      insuranceAmount
+      destination
+      finalDeliveryDate
+      <FK>retailCenterUniqueID
+    Transport Event
+      <PK>scheduleNumber
+      type
+      deliveryRoute
+      <FK>shippedItemNumber
+    Retail Center
+      <PK>uniqueID
+      type
+      address
+
+EXAMPLE #2
+  Entitites:
+    Sales Order
+      <PK> itemNumber
+      description
+      price
+      customerName
+      shipAddress
+      quantityOnHand
+      accountBalance
+      creditLimit
+    Billing Clerk
+      customerName
+      billAddres
+      quantitySold
+      price
+      terms
+      <FK> itemNumber
+    Inventory
+      description
+      quantityOnHand
+      <FK> itemNumber
+
+EXAMPLE #3
+  Entitites:
+    Athlete
+      <PK> idNumber
+      lastName
+      firstName
+      event
+      <FK> academicEligibilityIdNumber
+      <FK> physicalEligibilityIdNumber
+      <FK> statisticsIdNumber
+    Academic Eligibility
+      <PK> idNumber
+      gpa
+      classGrade
+      creditHours
+      attendance
+    Physical Eligibility
+      <PK> idNumber
+      healthy
+    Statistics
+      <PK> idNumber
+      weight
+      height
+      rankings
+    Event
+      <PK> idNumber
+      eventName
+    Event Subscription
+      <PK> idNumber
+      <FK> eventIdNumber
+      <FK> athleteIdNumber
+
+DOG EXAMPLE:
+  Entities:
+    Dog
+      breed
+      weight
+      color
+      gender
+      hair
+      cost
+      immunizations
+      
