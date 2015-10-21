@@ -1,0 +1,26 @@
+Create ERD
+  to Database with
+    Entities
+    Attributes
+    Relationships
+
+Entities:
+  Shipped items
+    <PK>itemNumber
+    weight
+    dimensions
+    insuranceAmount
+    destination
+    finalDeliveryDate
+    <FK>retailCenterUniqueID
+  Transport Event
+    <PK>scheduleNumber
+    type
+    deliveryRoute
+    <FK>shippedItemNumber
+  Retail Center
+    <PK>uniqueID
+    type
+    address
+    
+  
