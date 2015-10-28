@@ -1,0 +1,240 @@
+\chapter{Movie Catalog}
+
+The names of the database objects described below is writed based on \textit{SQL Server Standards Naming Conventions V.15} \footnote{\url{http://www.isbe.net/ILDS/pdf/SQL_server_standards.pdf}}. The \cref{fig:erd} was created using the online-tool \textit{GenMyModel} \footnote{\url{https://repository.genmymodel.com/arkye/IIT-DBS-HWK5}}.
+
+\section{Relationships}
+
+	\begin{itemize}
+		\item{\textbf{Movie}:
+			\begin{itemize}
+				\item{One \textbf{Movie} can have one \textbf{MovieType};}
+				\item{One \textbf{Movie} can have two or many \textbf{Star}s.}
+			\end{itemize}}
+		\item{\textbf{MovieType}: One \textbf{MovieType} can have zero, one, or many \textbf{Movie}s;}
+		\item{\textbf{Star}: One \textbf{Star} can have one or many \textbf{Movies};}
+	\end{itemize}
+
+\section{Entity-Relationship Diagram}
+
+	The creation of \textbf{MovieStar} is needed in order to satisfy the many-to-many relationship between \textbf{Movie} and \textbf{Star}.
+
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[scale=0.43]{HW5_ERD}
+			\caption{Entity-Relationship Diagram}
+			\label{fig:erd}
+		\end{center}
+	\end{figure}
+
+\section{Populated Database}
+
+	\begin{table}[H]
+		\begin{center}
+			\begin{tabular}{|c|c|c|c|}
+				\hline
+				\textbf{Id} & \textbf{Name} & \textbf{ReleaseDate} & \textbf{MovieType\_Id} \\ \hline
+				01 & Mr. Nobody & 2009-09-12 & 05 \\ \hline
+				02 & Fight Club & 1999-10-15 & 05 \\ \hline
+				03 & A Clockwork Orange & 1972-02-02 & 01 \\ \hline
+				04 & Jonathan Livingston Seagull & 1973-10-23 & 05 \\ \hline
+				05 & Monty Python and the Holy Grail & 1975-05-23 & 02 \\ \hline
+				06 & V for Vendetta & 2006-03-17 & 03 \\ \hline
+				07 & The Matrix & 1999-03-31 & 03 \\ \hline
+				08 & The Matrix Revolutions & 2003-11-05 & 03 \\ \hline
+				09 & Black Swan & 2010-12-17 & 05 \\ \hline
+				10 & Friend with Benefits & 2011-07-22 & 04 \\ \hline
+			\end{tabular}
+			\caption{\textbf{Movie} table.}
+		\end{center}
+	\end{table}
+
+	\begin{table}[H]
+		\begin{center}
+			\begin{tabular}{|c|c|}
+				\hline
+				\textbf{Id} & \textbf{Name} \\ \hline
+				01 & Sci-Fi \\ \hline
+				02 & Comedy \\ \hline
+				03 & Action \\ \hline
+				04 & Romance \\ \hline
+				05 & Drama \\ \hline
+			\end{tabular}
+			\caption{\textbf{MovieType} table.}
+		\end{center}
+	\end{table}
+
+	\begin{table}[H]
+		\begin{center}
+			\begin{tabular}{|c|c|c|}
+				\hline
+				\textbf{Id} & \textbf{Movie\_Id} & \textbf{Star\_Id} \\ \hline
+				01 & 01 & 01 \\ \hline
+				02 & 01 & 02 \\ \hline
+				03 & 02 & 03 \\ \hline
+				04 & 02 & 04 \\ \hline
+				05 & 02 & 01 \\ \hline
+				06 & 03 & 05 \\ \hline
+				07 & 03 & 06 \\ \hline
+				08 & 04 & 07 \\ \hline
+				09 & 04 & 08 \\ \hline
+				10 & 05 & 09 \\ \hline
+				11 & 05 & 10 \\ \hline
+				12 & 06 & 11 \\ \hline
+				13 & 06 & 12 \\ \hline
+				14 & 07 & 13 \\ \hline
+				15 & 07 & 14 \\ \hline
+				16 & 07 & 11 \\ \hline
+				17 & 08 & 13 \\ \hline
+				18 & 08 & 14 \\ \hline
+				19 & 08 & 11 \\ \hline
+				20 & 09 & 12 \\ \hline
+				21 & 09 & 15 \\ \hline
+				22 & 10 & 15 \\ \hline
+				23 & 10 & 16 \\ \hline
+			\end{tabular}
+			\caption{\textbf{MovieStar} table.}
+		\end{center}
+	\end{table}
+
+	\begin{table}[H]
+		\begin{center}
+			\begin{tabular}{|c|c|}
+				\hline
+				\textbf{Id} & \textbf{Name} \\ \hline
+				01 & Jared Leto \\ \hline
+				02 & Sarah Polley \\ \hline
+				03 & Brad Pitt \\ \hline
+				04 & Edward Norton \\ \hline
+				05 & Malcolm McDowell \\ \hline
+				06 & Patrick Magee \\ \hline
+				07 & James Franciscus \\ \hline
+				08 & Juliet Mills \\ \hline
+				09 & Graham Chapman \\ \hline
+				10 & John Cleese \\ \hline
+				11 & Hugo Weaving \\ \hline
+				12 & Natalie Portman \\ \hline
+				13 & Keanu Reeves \\ \hline
+				14 & Carrie-Anne Moss \\ \hline
+				15 & Mila Kunis \\ \hline
+				16 & Justin Timberlake \\ \hline
+			\end{tabular}
+			\caption{\textbf{Star} table.}
+		\end{center}
+	\end{table}
+
+\section{Showing Data}
+	\begin{enumerate}
+			\item{%1
+				\begin{itemize}
+					\item{\textbf{Movie Name}: Mr. Nobody \textit{(\#Movie:01)};}
+					\item{\textbf{Type}: Drama \textit{(\#Movie:01 $\to$ \#MovieType:05)};}
+					\item{\textbf{Release Date}: 09/12/2009 \textit{(\#Movie:01)};}
+					\item{\textbf{Stars}:
+						\begin{itemize}
+							\item{Jared Leto \textit{(\#Movie:01 $\gets$ \#MovieStar:01 $\to$ \#Star:01)};}
+							\item{Sarah Polley \textit{(\#Movie:01 $\gets$ \#MovieStar:02 $\to$ \#Star:02)};}
+						\end{itemize}}
+				\end{itemize}}
+			\item{%2
+				\begin{itemize}
+					\item{\textbf{Movie Name}: Fight Club \textit{(\#Movie:02)};}
+					\item{\textbf{Type}: Drama \textit{(\#Movie:02 $\to$ \#MovieType:05)};}
+					\item{\textbf{Release Date}: 10/15/1999 \textit{(\#Movie:02)};}
+					\item{\textbf{Stars}:
+						\begin{itemize}
+							\item{Brad Pitt \textit{(\#Movie:02 $\gets$ \#MovieStar:03 $\to$ \#Star:03)};}
+							\item{Edward Norton \textit{(\#Movie:02 $\gets$ \#MovieStar:04 $\to$ \#Star:04)};}
+							\item{Jared Leto \textit{(\#Movie:02 $\gets$ \#MovieStar:05 $\to$ \#Star:01)};}
+						\end{itemize}}
+				\end{itemize}}
+			\item{%3
+				\begin{itemize}
+					\item{\textbf{Movie Name}: A Clockwork Orange \textit{(\#Movie:03)};}
+					\item{\textbf{Type}: Sci-Fi \textit{(\#Movie:03 $\to$ \#MovieType:01)};}
+					\item{\textbf{Release Date}: 02/02/1972 \textit{(\#Movie:03)};}
+					\item{\textbf{Stars}:
+						\begin{itemize}
+							\item{Malcolm McDowell \textit{(\#Movie:03 $\gets$ \#MovieStar:06 $\to$ \#Star:05)};}
+							\item{Patrick Magee \textit{(\#Movie:03 $\gets$ \#MovieStar:07 $\to$ \#Star:06)};}
+						\end{itemize}}
+				\end{itemize}}
+			\item{%4
+				\begin{itemize}
+					\item{\textbf{Movie Name}: Jonathan Livingston Seagull \textit{(\#Movie:04)};}
+					\item{\textbf{Type}: Drama \textit{(\#Movie:04 $\to$ \#MovieType:05)};}
+					\item{\textbf{Release Date}: 10/23/1973 \textit{(\#Movie:04)};}
+					\item{\textbf{Stars}:
+						\begin{itemize}
+							\item{James Franciscus \textit{(\#Movie:04 $\gets$ \#MovieStar:08 $\to$ \#Star:07)};}
+							\item{Juliet Mills \textit{(\#Movie:04 $\gets$ \#MovieStar:09 $\to$ \#Star:08)};}
+						\end{itemize}}
+				\end{itemize}}
+			\item{%5
+				\begin{itemize}
+					\item{\textbf{Movie Name}: Monty Python and the Holy Grail \textit{(\#Movie:05)};}
+					\item{\textbf{Type}: Comedy \textit{(\#Movie:05 $\to$ \#MovieType:02)};}
+					\item{\textbf{Release Date}: 05/23/1975 \textit{(\#Movie:05)};}
+					\item{\textbf{Stars}:
+						\begin{itemize}
+							\item{Graham Chapman \textit{(\#Movie:05 $\gets$ \#MovieStar:10 $\to$ \#Star:09)};}
+							\item{John Cleese \textit{(\#Movie:05 $\gets$ \#MovieStar:11 $\to$ \#Star:10)};}
+						\end{itemize}}
+				\end{itemize}}
+			\item{%6
+				\begin{itemize}
+					\item{\textbf{Movie Name}: V for Vendetta \textit{(\#Movie:06)};}
+					\item{\textbf{Type}: Action \textit{(\#Movie:06 $\to$ \#MovieType:03)};}
+					\item{\textbf{Release Date}: 03/17/2006 \textit{(\#Movie:06)};}
+					\item{\textbf{Stars}:
+						\begin{itemize}
+							\item{Hugo Weaving \textit{(\#Movie:06 $\gets$ \#MovieStar:12 $\to$ \#Star:11)};}
+							\item{Natalie Portman \textit{(\#Movie:06 $\gets$ \#MovieStar:13 $\to$ \#Star:12)};}
+						\end{itemize}}
+				\end{itemize}}
+			\item{%7
+				\begin{itemize}
+					\item{\textbf{Movie Name}: The Matrix \textit{(\#Movie:07)};}
+					\item{\textbf{Type}: Action \textit{(\#Movie:07 $\to$ \#MovieType:03)};}
+					\item{\textbf{Release Date}: 03/31/1999 \textit{(\#Movie:07)};}
+					\item{\textbf{Stars}:
+						\begin{itemize}
+							\item{Keanu Reeves \textit{(\#Movie:07 $\gets$ \#MovieStar:14 $\to$ \#Star:13)};}
+							\item{Carrie-Anne Moss \textit{(\#Movie:07 $\gets$ \#MovieStar:15 $\to$ \#Star:14)};}
+							\item{Hugo Weaving \textit{(\#Movie:07 $\gets$ \#MovieStar:16 $\to$ \#Star:11)};}
+						\end{itemize}}
+				\end{itemize}}
+			\item{%8
+				\begin{itemize}
+					\item{\textbf{Movie Name}: The Matrix Revolutions \textit{(\#Movie:08)};}
+					\item{\textbf{Type}: Action \textit{(\#Movie:08 $\to$ \#MovieType:03)};}
+					\item{\textbf{Release Date}: 11/05/2003 \textit{(\#Movie:08)};}
+					\item{\textbf{Stars}:
+						\begin{itemize}
+							\item{Keanu Reeves \textit{(\#Movie:08 $\gets$ \#MovieStar:17 $\to$ \#Star:13)};}
+							\item{Carrie-Anne Moss \textit{(\#Movie:08 $\gets$ \#MovieStar:18 $\to$ \#Star:14)};}
+							\item{Hugo Weaving \textit{(\#Movie:08 $\gets$ \#MovieStar:19 $\to$ \#Star:11)};}
+						\end{itemize}}
+				\end{itemize}}
+			\item{%9
+				\begin{itemize}
+					\item{\textbf{Movie Name}: Black Swan \textit{(\#Movie:09)};}
+					\item{\textbf{Type}: Drama \textit{(\#Movie:09 $\to$ \#MovieType:05)};}
+					\item{\textbf{Release Date}: 12/17/2010 \textit{(\#Movie:09)};}
+					\item{\textbf{Stars}:
+						\begin{itemize}
+							\item{Natalie Portman \textit{(\#Movie:09 $\gets$ \#MovieStar:20 $\to$ \#Star:12)};}
+							\item{Mila Kunis \textit{(\#Movie:09 $\gets$ \#MovieStar:21 $\to$ \#Star:15)};}
+						\end{itemize}}
+				\end{itemize}}
+			\item{%10
+				\begin{itemize}
+					\item{\textbf{Movie Name}: Friend with Benefits \textit{(\#Movie:10)};}
+					\item{\textbf{Type}: Romance \textit{(\#Movie:10 $\to$ \#MovieType:04)};}
+					\item{\textbf{Release Date}: 07/22/2011 \textit{(\#Movie:10)};}
+					\item{\textbf{Stars}:
+						\begin{itemize}
+							\item{Mila Kunis \textit{(\#Movie:10 $\gets$ \#MovieStar:22 $\to$ \#Star:15)};}
+							\item{Justin Timberlake \textit{(\#Movie:10 $\gets$ \#MovieStar:23 $\to$ \#Star:16)};}
+						\end{itemize}}
+				\end{itemize}}
+	\end{enumerate}
