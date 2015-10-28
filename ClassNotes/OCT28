@@ -1,0 +1,14 @@
+Movies
+	Id	Title	Genre	ReleaseYr	AID1	AID2
+	01	Lethal Weapon I	Action	1990	1	2
+	02	Back to the future	Action	1985	3	4
+Star
+	LN	FN	ActID
+	Gibson	Mel	01
+	Glover	Danny	02
+	Fox	Michael	03
+	Doc	Dr	04
+
+Select * from Star Where from Movie AID=1 AND AID2=2
+
+indianatech2.net/phpMyadmin
