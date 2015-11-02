@@ -1,0 +1,32 @@
+Friday  Nov6
+	Test 2
+		CH	6,7,8,4
+		30 Questions @ 2pts each
+			from CH	6,7,8
+		CH 4	@ 40pts
+	
+CH8	Physical Design
+	Magnetic disk device
+	Rotational delay
+		Time it takes for data to arrive
+			under read/write head
+			after read/write head
+			is switched on.
+	Indexed sequential file
+		Has an index built over the field by which file is sequenced
+		Mod common data indexing system is called a B+ tree index
+		If an index has a non-unique field of a file it may return multiple records
+	Database performance Affected by:
+		Volume of data
+		Need to perfom joins
+		Lack of built-in direct access to features like indexes
+		Way data is put to disks
+	Physical database design
+		Security
+		Response time
+		Data volatility
+		Throughput requirements
+	DeNormalization
+		Modify logic database design
+		Can improve perfomance
+		Introduces redundancy
