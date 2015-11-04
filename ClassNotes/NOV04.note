@@ -1,0 +1,69 @@
+Test 2 Friday
+	60 points of MG
+		30 Questions @ 2 each
+			CH 6, 7, 8
+			Quiz 5, 6, 7
+	40 points from CH4
+		X Table
+		ID	FNAME	Age	City
+		1	John	21	FW
+		2	Jue	18	NW
+		3	Jim	19	FW
+		4	Jill	25	FW
+		
+		Select ID from X where Age < 21;
+		Output:
+			ID
+			2
+			3
+
+		Select ID, City from X where Age < 21;
+		Output:
+			ID	City
+			2	NH
+			3	FW
+			
+		Select * from X where Age < 21;
+		Output:
+			ID	FNAME	Age	City
+			2	Jue	18	NH
+			3	Jim	19	FW
+			
+		Select FNAME from X where Age < 21 AND City = 'FW';
+		Output:
+			FNAME
+			Jim
+			
+		Select FNAME from X where Age < 21 OR City = 'FW';
+		Output:
+			FNAME
+			John
+			Joe
+			Jim
+			Jill
+		
+		--------------
+		X Table
+		ID	FNAME	City
+		1	John	FW
+		2	Jue	NW
+		3	Jim	FW
+		4	Jill	FW
+		
+		Y Table
+		ID	Age
+		1	25
+		2	32
+		3	18
+		4	21
+		
+		Select FNAME from X, Y where X.ID = Y.ID AND Age = 21;
+		Output:
+			FNAME
+			Jill
+			
+		Select FNAME from X, Y where X.ID = Y.ID AND Age <= 21;
+		Output:
+			FNAME
+			Jim
+			Jill
