@@ -1,0 +1,43 @@
+Final Exam Schedule:
+	WED Dec16 1-3pm
+Test 3 Schedule:
+	FRI Dec04
+	CH 10,11,13 AND SQL
+	QUIZ 8,9,10
+
+CH 10 - Data Administration vs. Database Administration
+	Data Administration
+		Policies + Standards
+		Data as competitive resource
+		Accounting for use of data
+	Database Administration
+		Operationally oriented
+		Responsible for day-to-day monitoring
+		Carries out policies
+		
+		Performance monitoring
+		Usage Monitoring
+		Data dictionary
+			Tables in database
+			Attributes in table
+			Relationships
+	
+Students
+ID	LName	FName	TI
+1	Doe	John	10
+2	Moe	John	20
+3	Doe	Mary	50
+4	Smith	Mary	80
+
+SELECT SUM(TI) FROM Students;
+	Output: 160
+SELECT AVG(TI) FROM Students;
+	Output: 40
+SELECT COUNT(LName) FROM Students WHERE LName='Doe';
+	Output: 2
+SELECT MAX(TI) FROM Students;
+	Output: 80
+
+Backlog for Wednesday:
+	CH10
+	SQL: Sum, average, count, and group
