@@ -1,0 +1,19 @@
+HWK7 Due: Monday Nov 16
+	P. 289 # 1 CH10
+Test3 Friday 12/4
+	CH 10, 11, 13
+
+Data Ownership
+Data Dictionary
+
+CH 11 Control Issues
+	Security
+		Unauthorized Data Access
+		Unauthorized Program Modifications
+		Malicious Mischief\
+		Encryption
+			SSL (Secure Socket Layer)
+				Network
+		Antivirus
+	Backup + Recovery
+	Concurrency Control
