@@ -1,6 +1,6 @@
 Test3 Friday, Dec 04
 Project Due: Wed, Dec 09
-Final Exam: Wed, Dec 16, 1:00 - 3:00
+Final Exam: Wed, Dec 16, 1:00 - 3:00 (150 pts)
 
 CH 11
 	Security
@@ -19,3 +19,10 @@ CH13
 		Not Necessarily Absolutely Current
 	TPS - Transaction Processing System
 	DSS - Decision Support System
+	
+	Enterprise data Warehouse
+		Incorporates the data of an entire company or major division, site, or activity of a company
+	
+	Data Mart
+		Designed to suppor a small part of an organization
+		Often companies have several DM.
