@@ -1,5 +1,6 @@
 HWK 8 Due: Mon Nov 30
 	P.312 Exercise #1
+	Examples: What would you do?
 
 HWK 9+10 Due: 12/2
 	P. 362
@@ -8,3 +9,27 @@ HWK 9+10 Due: 12/2
 Project Due: Wed, Dec 9
 
 Final Exam: Wed, Dec 16 - 1:00-3:00
+
+No Class Mon Nov 23
+
+Quiz 10 Fri Nov 20
+
+-----------------
+
+Data Cleaning
+	Transactional data
+		Steps in Cleaning
+			Identify Problem data
+			Fix it
+Data Transformation
+	Online Analytic Processing
+		Drill down
+		Slice
+		Pivot
+
+Sarbannes Oxley Act
+	How long
+	How much (what)
+
+Data Mining
+	Searching for hidden knowledge to give company an advantage in the marketplace
