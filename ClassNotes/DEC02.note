@@ -1,0 +1,14 @@
+Project
+	Mechanics Table
+	Airport Table
+	Skill Table
+		skillnum
+		skillname
+		skillcat
+	Qualifications Table
+		mechnum
+		skillnum
+		yearqual
+		profrate
+
+	Mechanic -> 2 skills
